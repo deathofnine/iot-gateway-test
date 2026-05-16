@@ -1,0 +1,28 @@
+# Python 缓存
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# pytest 缓存
+.pytest_cache/
+*.pycache/
+
+# 测试报告
+*.html
+reports/
+
+# IDE 配置
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 配置文件（含密码，避免泄露）
+*.cfg
+*_cfg.json
+*config.json
+device.cfg
+
+# 日志文件
+*.log
