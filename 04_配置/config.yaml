@@ -1,0 +1,22 @@
+rpc:
+  host: "192.168.137.25"
+  port: 1234
+  timeout: 5
+
+mqtt:
+  broker: "b1d7c0faf7.st1.iotda-device.cn-north-4.myhuaweicloud.com"
+  port: 1883
+  device_id: "6a00bc177f2e6c302f6f8843_dht11_led_001"
+  client_id: "6a00bc177f2e6c302f6f8843_dht11_led_001_0_0_2026051118"
+  username: "6a00bc177f2e6c302f6f8843_dht11_led_001"
+  password: "e905968cd5723ff0a8e0d16363af211b3babe18a121bb6637d3c19416f58fbb3"
+  qos: 1
+  keepalive: 60
+
+device:
+  led_pin: 0
+  dht11_pin: 0
+
+test:
+  retry_count: 3
+  delay_seconds: 0.5
