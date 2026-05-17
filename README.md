@@ -2,7 +2,7 @@
 
 ## 项目说明
 
-针对 [iot-gateway-device](https://github.com/deathofnine/iot-gateway-device) 的自动化测试项目，实现传感器采集、远程控制、云平台对接的完整测试。
+针对 [iot-gateway-device](https://github.com/deathofnine/iot-gateway-device) 的测试项目，实现传感器采集、远程控制、云平台对接的完整测试。
 
 ## 功能特性
 
@@ -16,7 +16,7 @@
 - Python 3.7+
 - 需要连接 i.MX6ULL 开发板
 - 需要网络连接华为云 IoT 平台
-
+- 需要配置 `config.yaml` 中的开发板 IP
 ## 安装依赖
 
 ```bash
@@ -34,6 +34,9 @@ cd 03_接口自动化
 pytest
 
 # 运行 RPC 测试
+pytest tests/test_rpc.py -v
+
+# 运行 MQTT 测试
 pytest tests/test_rpc.py -v
 
 # 运行 MQTT 测试
