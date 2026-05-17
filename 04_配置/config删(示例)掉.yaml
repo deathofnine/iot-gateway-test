@@ -1,0 +1,34 @@
+rpc:
+  host: "192.168.137.161"
+  port: 1234
+  timeout: 5
+
+mqtt:
+  broker: "hostname"
+  port: 1883
+  device_id: "username"
+  client_id: "clientId"
+  username: "username"
+  password: "password"
+  qos: 1
+  keepalive: 60
+
+device:
+  led_pin: 0
+  dht11_pin: 0
+
+test:
+  retry_count: 3
+  delay_seconds: 0.5
+
+
+#华为云申请loT后可以在设备信息得到一个MQTT连接参数
+#具体格式为,将下面得到的数据一一对应填入上面
+#clientId
+#username
+#password
+#hostname
+#port
+#protocol
+#将下面得到的数据一一对应填入上面，将文件名中的汉字“删（示例）掉”删掉后完成配置
+
