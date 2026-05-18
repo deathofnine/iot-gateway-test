@@ -37,9 +37,6 @@ pytest
 pytest tests/test_rpc.py -v
 
 # 运行 MQTT 测试
-pytest tests/test_rpc.py -v
-
-# 运行 MQTT 测试
 pytest tests/test_mqtt.py -v
 
 # 显示打印输出
