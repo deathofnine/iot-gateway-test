@@ -9,16 +9,27 @@ from libs.rpc_client import RPCClient
 @pytest.fixture
 def client():
     return RPCClient()
-
+#----------------------------------
+# 作用： 测试 DHT11 温湿度读取结果
+# 判断 ：
+# 数据不为空
+# 温度 0~50
+# 湿度 0~100
+#-----------------------------------
 @pytest.mark.rpc
 def test_dht11_read(client):
-    """测试 DHT11 温湿度读取"""
+   
     data = client.dht11_read()
-    assert data is not None
+    assert data is not None  #数据不为空
     assert 0 <= data["temp"] <= 50
     assert 0 <= data["humi"] <= 100
     print(f"温度: {data['temp']}°C, 湿度: {data['humi']}%")
 
+#----------------------------------
+# 作用： 开灯测试
+# 判断 ：
+# rpc返回结果是否为 0
+#-----------------------------------
 @pytest.mark.rpc
 def test_led_control_on(client):
     """测试 LED 开灯"""
@@ -26,6 +37,11 @@ def test_led_control_on(client):
     assert result == 0
     print("开灯成功")
 
+#----------------------------------
+# 作用： 关灯测试
+# 判断 ：
+# rpc返回结果是否为 0 
+#-----------------------------------
 @pytest.mark.rpc
 def test_led_control_off(client):
     """测试 LED 关灯"""
@@ -33,6 +49,11 @@ def test_led_control_off(client):
     assert result == 0
     print("关灯成功")
 
+#----------------------------------
+# 作用： 连续开关等测试
+# 判断 ：
+# 快速连续三次开关返回结果是否正确
+#-----------------------------------
 @pytest.mark.rpc
 @pytest.mark.slow
 def test_led_control_twice(client):
@@ -43,6 +64,12 @@ def test_led_control_twice(client):
         result_off = client.led_control(0)
         assert result_off == 0
     print("连续开关测试通过")
+
+#----------------------------------
+# 作用： 手动测试rpc是否正常工作
+# 调用方法
+# pytest tests/test_rpc.py -v
+#-----------------------------------
 if __name__ == "__main__":
     print("=== 手动测试 RPC ===")
     
